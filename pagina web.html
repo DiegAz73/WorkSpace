@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres jugar conmigo?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.pinimg.com/236x/45/63/0b/45630b0b3e56786b98035f998d1db5a2.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        #cuadro {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="cuadro">
+        <h1>¿Quieres jugar conmigo?</h1>
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        const siButton = document.getElementById('si');
+        const noButton = document.getElementById('no');
+        const cuadro = document.getElementById('cuadro');
+
+        siButton.addEventListener('click', () => {
+            cuadro.innerHTML = '<h1>¡Yeiiiiii!</h1>';
+        });
+
+        noButton.addEventListener('click', () => {
+            // Cambiar la posición del botón "No"
+            const randomX = Math.floor(Math.random() * 200) - 100; // Random X position
+            const randomY = Math.floor(Math.random() * 200) - 100; // Random Y position
+            noButton.style.position = 'relative';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
